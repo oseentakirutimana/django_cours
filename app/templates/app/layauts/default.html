@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<
+
 {% include 'app/partials/head.html'%}
 
 <body id="page-top">
@@ -12,13 +12,6 @@
        {% include 'app/partials/sidebar.html' %}
         <!-- End of Sidebar -->
 
-
-
-
-
-
-        
-
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -27,20 +20,20 @@
 
                 <!-- Topbar -->
 
-{%include 'app/partials/nav.html'%}
+             {%include 'app/partials/nav.html'%}
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
 
-{% block content %}
-{% endblock %}
+              {% block content %}
+              {% endblock %}
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
 
             <!-- Footer -->
-          {% include 'app/partials/footer.html'%}
+          {% include 'app/partials/footer.html' %}
             <!-- End of Footer -->
 
         </div>
