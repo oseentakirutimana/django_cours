@@ -46,7 +46,7 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom component:</h6>
-                <a class="collapse-item" href="utilities-color.html">all customers</a>
+                <a class="collapse-item" href="{% url 'customers_index' %}">all customers</a>
             </div>
         </div>
     </li>
@@ -60,7 +60,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Products compoment:</h6>
-                <a class="collapse-item" href="#">all products</a>
+                <a class="collapse-item" href="{% url 'products_index' %}">all products</a>
                 <a class="collapse-item" href="{% url 'categories_index' %}">Categories</a>
             </div>
         </div>
