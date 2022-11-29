@@ -1,0 +1,13 @@
+{% extends 'app/layauts/default.html' %} 
+{% load crispy_forms_tags %} 
+{% block content %}
+<form action="{% url 'orders_save' %}" method="post">
+    {% csrf_token %} 
+    {{ form.customer|as_crispy_field }}
+    {{ form.product|as_crispy_field }}
+    {{ form.qty|as_crispy_field }}
+    {{ form.total|as_crispy_field }}
+    <input type="submit" value="Enregistrer ">
+</form>
+<!-- /.container-fluid -->
+{% endblock %}
