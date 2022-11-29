@@ -20,4 +20,10 @@ from app import views
 urlpatterns = [
    # path('admin/', admin.site.urls),
    path('',views.home.index, name='home'),
+   
+     path('categories/',views.categories.index, name='categories_index'),
+   path('categories/create',views.categories.create, name='categories_create'),
+   path('categories/save',views.categories.save,name='categories_save'),
+   path('categories/edit/<int:id>', views.categories.edit, name='categories_edit'),
+   path('categories/delete/<int:id>', views.categories.delete, name='categories_delete'),
 ]
