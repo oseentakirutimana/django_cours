@@ -1,14 +1,13 @@
 {% extends 'app/layauts/default.html' %} 
 {% load crispy_forms_tags %} 
 {% block content %}
-<form action="{% url 'customers_save' %}" method="post">
     {% csrf_token %} 
     {{ form.first_name|as_crispy_field }}
     {{ form.last_name|as_crispy_field }}
     {{ form.tel_name|as_crispy_field }}
     {{ form.email_name|as_crispy_field }}
     {{ form.address_name|as_crispy_field }}
-    <input type="submit" value="Enregistrer ">
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
 </form>
 <!-- /.container-fluid -->
 {% endblock %}
