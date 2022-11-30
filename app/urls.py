@@ -21,28 +21,32 @@ urlpatterns = [
    # path('admin/', admin.site.urls),
    path('',views.home.index, name='home'),
 
-     path('categories/',views.categories.index, name='categories_index'),
+   path('categories/',views.categories.index, name='categories_index'),
    path('categories/create',views.categories.create, name='categories_create'),
    path('categories/save',views.categories.save,name='categories_save'),
    path('categories/edit/<int:id>', views.categories.edit, name='categories_edit'),
    path('categories/delete/<int:id>', views.categories.delete, name='categories_delete'),
 
-      path('products/',views.products.index, name='products_index'),
+   path('products/',views.products.index, name='products_index'),
    path('products/create',views.products.create, name='products_create'),
    path('products/save',views.products.save,name='products_save'),
    path('products/edit/<int:id>', views.products.edit, name='products_edit'),
    path('products/delete/<int:id>', views.products.delete, name='products_delete'),
 
-    path('customers/',views.customers.index, name='customers_index'),
+   path('customers/',views.customers.index, name='customers_index'),
    path('customers/create',views.customers.create, name='customers_create'),
    path('customers/save',views.customers.save,name='customers_save'),
    path('customers/edit/<int:id>', views.customers.edit, name='customers_edit'),
    path('customers/delete/<int:id>', views.customers.delete, name='customers_delete'),
 
-   path('orders/',views.orders.index, name='orders_index'),
-   path('orders/create',views.orders.create, name='orders_create'),
-   path('orders/save',views.orders.save,name='orders_save'),
-   path('orders/edit/<int:id>', views.orders.edit, name='orders_edit'),
-   path('orders/delete/<int:id>', views.orders.delete, name='orders_delete'),
+ 
+    path('orders/', views.orders.index, name='orders_index'),
+    path('orders/create', views.orders.create, name='orders_create'),
+    path('orders/store', views.orders.store, name='orders_store'),
+    path('orders/getProducts', views.orders.getProducts, name='getProduct'),
+    path('orders/getUnitPrice', views.orders.getProducts, name='getUnitPrice'),
+    
+    path('orders/edit/<int:id>', views.orders.edit, name='orders_edit'),
+    path('orders/delete/<int:id>', views.orders.delete, name='orders_delete'),
 
 ]

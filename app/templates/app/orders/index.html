@@ -4,23 +4,41 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">orders</h1>
+    <h1 class="h3 mb-2 text-gray-800">Orders</h1>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <a href="{% url 'orders_create' %}" class="btn btn-primary">Nouveau</a>
         </div>
+
         <div class="card-body">
+
+        <div class="card-body">   
+            <!-- messages for user -->
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role= "alert">
+                    <i class="fas fa-alert mr-1"></i>{{ message }}
+                    <button type="button" class="close " data-dismiss="alert" aria-label="close">
+                        <span arial-hidden="true">&times;</span>
+                    </button>
+                </div>    
+                {% endfor %} 
+            {% endif %}
+        <!-- end messages for user -->
+
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Customer</th>
-                        <th>product</th>
-                        <th>quality</th>
+                        <th>Customer First Name</th>
+                        <th>Customer Last Name</th>
+                        <th>Product Name</th>
+                        <th>Quantité</th>
                         <th>Total</th>
+                        <th>Options</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -28,15 +46,16 @@
                     <tr>
                         <td>{{ order.id }}</td>
                         <td>{{ order.customer.first_name }}</td>
-                        <td>{{ order.product.product_name}}</td>
+                        <td>{{ order.customer.last_name }}</td>
+                        <td>{{ order.product.product_name }}</td>
                         <td>{{ order.qty }}</td>
                         <td>{{ order.total }}</td>
                         <td>
-                            <a href="{% url 'orders_edit' order.id %}" class="btn btn-primary">Editer</a>
+                            <a href="{% url 'orders_edit' order.id %}" class="btn btn-primary">Edit</a>
 
                             <form action="{% url 'orders_delete' order.id %}" method="post">
                                 {% csrf_token %}
-                                <button type="submit" onclick="return confirm('Voulez vous vraiment supprimer ce produit ?')" class="btn btn-danger">supprimer</button>
+                                <button type="submit" onclick="return confirm('Voulez vous supprimer cette categorie ?')" class="btn btn-danger"> Delete </button>
                             </form>
                         </td>
                     </tr>
