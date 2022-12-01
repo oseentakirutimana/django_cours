@@ -21,11 +21,11 @@ $(function() {
 $(function() {
     $('#id_product').on("change", function () {
         id_product = $(this).val();
-       // alert(id_product);
+    // alert(id_product);
         $.get(
             "/orders/getUnitPrice",
             {
-                id_product: id_product,
+            id_product: id_product,
             },
             function (data) {
                 $("#unit_price").val(data);
@@ -36,7 +36,7 @@ $(function() {
 
 $('#id_qty').on('keyup', function () {
     var id_qty = $(this).val();
-    //alert(id_qty)
+ //alert(id_qty)
     var unit_price = $('#unit_price').val();
     var total =id_qty * unit_price;
     $('#id_total').val(total);
