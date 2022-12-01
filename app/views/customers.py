@@ -64,5 +64,3 @@ def delete(request, id):
     product.delete()
     messages.success(request, "Customer successfully deleted")
     return redirect('/customers')
-  
-
