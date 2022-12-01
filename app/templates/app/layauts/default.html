@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Head -->
 {% include 'app/partials/head.html' %}
+<!-- End of Head -->
 
 <body id="page-top">
 
@@ -20,24 +22,25 @@
 
                 <!-- Topbar -->
                 {% include 'app/partials/nav.html' %}
+
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                  {% block content %}
-                  {% endblock %}
+          
+                {% block content %}
+                {%endblock %}
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-            {% include 'app/partials/footer.html' %}
-            <!-- End of Footer -->
-
         </div>
         <!-- End of Content Wrapper -->
-
+   
     </div>
+    <!-- Footer -->
+   {% include 'app/partials/footer.html' %}
+   <!-- End of Footer -->
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
@@ -83,9 +86,7 @@
     <script src="{% static 'app/js/demo/chart-area-demo.js' %}"></script>
     <script src="{% static 'app/js/demo/chart-pie-demo.js' %}"></script>
     <script src="{% static 'app/js/main.js' %}"></script>
-    {% block scripts %}
-    {% endblock %}
-
+    <!-- {% block scripts %}{% endblock %} -->
 </body>
 
 </html>
